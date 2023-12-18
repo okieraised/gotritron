@@ -1,4 +1,4 @@
-package triton
+package gotritron
 
 import (
 	"google.golang.org/grpc"
@@ -23,7 +23,7 @@ const (
 	TritonAPIForSystemMemoryRegionPrefix        = TritonAPIPrefix + "/systemsharememory/region/"
 )
 
-var tritonHTTPClient *TritonGRPCClientService
+var tritonHTTPClient *TritonGRPCClient
 
 type TritonHTTPClientService struct {
 	serverURL   string
@@ -33,7 +33,7 @@ type TritonHTTPClientService struct {
 	modelName   interface{}
 }
 
-func GetHTTPInstance() *TritonGRPCClientService {
+func GetHTTPInstance() *TritonGRPCClient {
 	return tritonHTTPClient
 }
 

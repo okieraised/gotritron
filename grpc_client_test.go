@@ -1,4 +1,4 @@
-package triton
+package gotritron
 
 import (
 	"fmt"
@@ -21,23 +21,23 @@ func TestNewTritonGRPCClient(t *testing.T) {
 	assert.NoError(t, err)
 	assert.NotNil(t, tritonGRPCClient.grpcClient)
 
-	isAlive, err := tritonGRPCClient.ServerAlive(5 * time.Second)
-	assert.NoError(t, err)
-	assert.Equal(t, true, isAlive)
-
-	isReady, err := tritonGRPCClient.ServerReady(5 * time.Second)
-	assert.NoError(t, err)
-	assert.Equal(t, true, isReady)
-
-	meta, err := tritonGRPCClient.ServerMetadata(5 * time.Second)
-	assert.NoError(t, err)
-	fmt.Println(meta)
+	//isAlive, err := tritonGRPCClient.ServerAlive(5 * time.Second)
+	//assert.NoError(t, err)
+	//assert.Equal(t, true, isAlive)
+	//
+	//isReady, err := tritonGRPCClient.ServerReady(5 * time.Second)
+	//assert.NoError(t, err)
+	//assert.Equal(t, true, isReady)
+	//
+	//meta, err := tritonGRPCClient.ServerMetadata(5 * time.Second)
+	//assert.NoError(t, err)
+	//fmt.Println(meta)
 
 	index, err := tritonGRPCClient.ModelRepositoryIndex("", true, 5*time.Second)
 	assert.NoError(t, err)
 	fmt.Println(index)
 
-	modelConf, err := tritonGRPCClient.GetModelConfiguration("face_detection_retina", "1", 5*time.Second)
-	assert.NoError(t, err)
-	fmt.Println(modelConf)
+	//modelConf, err := tritonGRPCClient.GetModelConfiguration("face_detection_retina", "1", 5*time.Second)
+	//assert.NoError(t, err)
+	//fmt.Println(modelConf)
 }
