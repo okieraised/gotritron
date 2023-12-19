@@ -7,12 +7,15 @@ import (
 	"testing"
 )
 
-func TestConvertImageToOpenCV(t *testing.T) {
+func TestNewRetinaFaceDetection(t *testing.T) {
+	rfd := NewRetinaFaceDetection()
+
 	f, err := os.Open("../test_data/harrison.jpeg")
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
+	defer f.Close()
 
 	content, err := io.ReadAll(f)
 	if err != nil {
@@ -26,4 +29,6 @@ func TestConvertImageToOpenCV(t *testing.T) {
 		return
 	}
 	fmt.Println(res)
+
+	rfd.preprocessOpenCVImg(res)
 }
