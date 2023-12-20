@@ -212,8 +212,8 @@ func (tc *TritonGRPCClient) Disconnect() error {
 	return err
 }
 
-// modelGRPCInfer Call Triton with GRPC
-func (tc *TritonGRPCClient) modelGRPCInfer(inferInputs []*grpc_client.ModelInferRequest_InferInputTensor, inferOutputs []*grpc_client.ModelInferRequest_InferRequestedOutputTensor, rawInputs [][]byte, modelName, modelVersion string, timeout time.Duration) (*grpc_client.ModelInferResponse, error) {
+// ModelGRPCInfer Call Triton with GRPC
+func (tc *TritonGRPCClient) ModelGRPCInfer(inferInputs []*grpc_client.ModelInferRequest_InferInputTensor, inferOutputs []*grpc_client.ModelInferRequest_InferRequestedOutputTensor, rawInputs [][]byte, modelName, modelVersion string, timeout time.Duration) (*grpc_client.ModelInferResponse, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), timeout)
 	defer cancel()
 	// Create infer request for specific model/version.
