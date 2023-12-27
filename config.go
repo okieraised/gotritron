@@ -34,7 +34,7 @@ type RetinaFaceDetectionConfig struct {
 	ModelName string
 	// Timeout defines duration in seconds
 	Timeout             int64
-	ImageSize           [2]int32
+	ImageSize           [2]int
 	MaxBatchSize        int32
 	ConfidenceThreshold float32
 	IOUThreshold        float32
@@ -44,7 +44,7 @@ func DefaultRetinaFaceDetectionConfig() *RetinaFaceDetectionConfig {
 	return &RetinaFaceDetectionConfig{
 		ModelName:           "face_detection_retina",
 		Timeout:             20,
-		ImageSize:           [2]int32{640, 640},
+		ImageSize:           [2]int{640, 640},
 		MaxBatchSize:        1,
 		ConfidenceThreshold: 0.7,
 		IOUThreshold:        0.45,
@@ -54,13 +54,13 @@ func DefaultRetinaFaceDetectionConfig() *RetinaFaceDetectionConfig {
 type VectorF32 [][]float32
 
 type FaceAlignConfig struct {
-	ImageSize         [2]int32
+	ImageSize         [2]int
 	StandardLandmarks VectorF32
 }
 
 func DefaultFaceAlignConfig() *FaceAlignConfig {
 	return &FaceAlignConfig{
-		ImageSize: [2]int32{640, 640},
+		ImageSize: [2]int{640, 640},
 		StandardLandmarks: VectorF32{
 			{38.2946, 51.6963},
 			{73.5318, 51.5014},
