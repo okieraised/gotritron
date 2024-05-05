@@ -1,5 +1,7 @@
 # gotritron
 
+Personal attempt to rewrite the face detection pipeline in Go (incomplete)
+
 ### OpenCV Installation (Ubuntu)
 ```shell
 sudo apt install build-essential cmake git pkg-config libgtk-3-dev \
